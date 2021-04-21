@@ -1,0 +1,20 @@
+{
+    "steps": [{
+        "name": "gcr.io/google.com/cloudsdktool/cloud-sdk:latest",
+        "entrypoint": "gcloud",
+        "args": [
+            "beta", "run", "deploy", "${_NICKNAME}-${_TARGET_ALIAS}-${PROJECT_ID}-${_SERVICE_NAME}",
+            "--image=us.gcr.io/${PROJECT_ID}/${_SERVICE_NAME}/${_TARGET_ALIAS}:${_TARGET_IMAGE_TAG}",
+            "--labels=env=${_TARGET_ALIAS}",
+            "--region=us-central1",
+            "--platform=managed",
+            "--allow-unauthenticated",
+            "--set-env-vars=DEBUG=${_DEBUG}",
+            "--set-env-vars=GOOGLE_CLOUD_PROJECT=${PROJECT_ID}",
+            "--set-env-vars=LOGS=${_LOGS}",
+            "--set-env-vars=NICKNAME=${_NICKNAME}",
+            "--set-env-vars=SITE_NICKNAME=${_SITE_NICKNAME}",
+            "--set-env-vars=REMOTE_PORT=${_TARGET_REMOTE_PORT}"
+        ]
+    }]
+}

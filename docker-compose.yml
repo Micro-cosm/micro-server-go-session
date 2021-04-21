@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+    
+    micro-server-go-session:
+    
+        image: us.gcr.io/${TARGET_PROJECT_ID}/${SERVICE_NAME}/${TARGET_ALIAS}:${TARGET_IMAGE_TAG}
+        build: .
+        container_name: micro_${NICKNAME}_${TARGET_ALIAS}
+        restart: unless-stopped
+        env_file:
+            - ".env.local.yml"
+        volumes:
+            - /Volumes/micro-server-go-session:/secrets
+        ports:
+            - ${TARGET_LOCAL_PORT}:${TARGET_REMOTE_PORT}
+        

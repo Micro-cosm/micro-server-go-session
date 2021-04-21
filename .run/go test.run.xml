@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="go test" type="GoTestRunConfiguration" factoryName="Go Test" editBeforeRun="true" singleton="false">
+    <module name="micro-server-go-session" />
+    <working_directory value="$PROJECT_DIR$" />
+    <go_parameters value="-i" />
+    <envs>
+      <env name="NICKNAME" value="session" />
+      <env name="GOOGLE_CLOUD_PROJECT" value="weja-us" />
+      <env name="GOOGLE_APPLICATION_CREDENTIALS" value="/Volumes/micro-server-go-session/fb-admin-credentials.json" />
+    </envs>
+    <kind value="DIRECTORY" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$" />
+    <framework value="gotest" />
+    <method v="2" />
+  </configuration>
+</component>
